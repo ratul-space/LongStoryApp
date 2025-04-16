@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.longstoryapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.longstoryapp"
         minSdk = 25
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -41,7 +41,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    implementation("com.github.siyamed-android-shape-imageview:0.9.3@aar")
+    implementation("com.github.siyamed-android-shape-imageview:0.9.3@aar")//something wrong here
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
