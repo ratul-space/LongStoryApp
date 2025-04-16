@@ -55,18 +55,22 @@ class MainActivity : AppCompatActivity() {
     private var ls: ListView? = null
     lateinit var lf: LayoutInflater
     lateinit var headerView: View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.long_story_app)
+
         ls = findViewById(R.id.list)
         lf = this.layoutInflater
-        headerView = lf.inflate(R.layout.header, null, false) as View
-        ls!!.addHeaderView(headerView, parent, false)
+        headerView = lf.inflate(R.layout.header, ls, false)
+        ls!!.addHeaderView(headerView, null, false)
+
         storyClass = ArrayList()
         for (i in title.indices) {
             val storyClassob = StoryClass(title[i], profile[i], time[i], comment[i])
             storyClass!!.add(storyClassob)
         }
+
         listViewAdapter = ListViewAdapter(this@MainActivity, storyClass!!)
         ls!!.adapter = listViewAdapter
     }
