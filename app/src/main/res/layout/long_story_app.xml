@@ -12,18 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
-    <include
-        android:id="@+id/header"
-        layout="@layout/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar" />
-
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/bottom" />
 
     <LinearLayout
         android:id="@+id/bottom"
