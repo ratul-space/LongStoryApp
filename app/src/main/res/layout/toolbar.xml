@@ -24,6 +24,7 @@
         android:layout_height="25dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/settings"
+        android:layout_gravity="right"
         >
 
     </ImageView>
