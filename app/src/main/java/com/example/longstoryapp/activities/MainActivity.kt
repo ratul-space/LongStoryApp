@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity() {
         "ohh cool! Enjoy this app with your full potential",
         "ohh cool! Enjoy this app with your full potential",
     )
-    private var storyClass: ArrayList<StoryClass>?= null
-    private var listViewAdapter: ListViewAdapter?= null
-    private var ls: ListView?= null
+    private var storyClass: ArrayList<StoryClass>? = null
+    private var listViewAdapter: ListViewAdapter? = null
+    private var ls: ListView? = null
     lateinit var lf: LayoutInflater
     lateinit var headerView: View
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,13 +61,13 @@ class MainActivity : AppCompatActivity() {
         ls = findViewById(R.id.list)
         lf = this.layoutInflater
         headerView = lf.inflate(R.layout.header, null, false) as View
-        ls!!.addHeaderView(headerView, null,false)
+        ls!!.addHeaderView(headerView, null, false)
         storyClass = ArrayList()
-        for (i in title.indices){
-            val storyClassob = StoryClass(title[i], profile[i], time[i], comment[i] )
+        for (i in title.indices) {
+            val storyClassob = StoryClass(title[i], profile[i], time[i], comment[i])
             storyClass!!.add(storyClassob)
         }
-        listViewAdapter
-
+        listViewAdapter = ListViewAdapter(this@MainActivity, storyClass!!)
+        ls!!.adapter = listViewAdapter
     }
 }
