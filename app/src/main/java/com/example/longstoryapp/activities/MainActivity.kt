@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         ls = findViewById(R.id.list)
         lf = this.layoutInflater
         headerView = lf.inflate(R.layout.header, null, false) as View
-        ls!!.addHeaderView(headerView, null, false)
+        ls!!.addHeaderView(headerView, parent, false)
         storyClass = ArrayList()
         for (i in title.indices) {
             val storyClassob = StoryClass(title[i], profile[i], time[i], comment[i])

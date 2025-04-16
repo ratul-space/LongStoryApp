@@ -1,85 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:background="#000"
-    >
+    android:orientation="horizontal">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/banner1"
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:id="@+id/profile"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
+            android:contentDescription="@string/circularimageview"
             android:layout_marginRight="30dp"
-            android:clickable="true" />
+            android:clickable="true"
+            android:focusable="true" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="140sp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:text="Web Devloper"
-            android:layout_marginTop="20dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="#FF5100"
-            />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:text="16 min ago"
-            android:layout_marginTop="20dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
             android:textColor="#F6E9E4"
-            android:layout_marginLeft="20dp"
-            />
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
-<View
-    android:id="@+id/view"
-    android:layout_width="match_parent"
-    android:layout_height="0.57dp"
-    android:layout_marginTop="50dp"
-    android:layout_marginStart="100dp"
-    android:layout_marginEnd="20dp"
-    android:background="#FFFFFF"
-    >
-</View>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.57dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="#FFFFFF" />
+
     <TextView
         android:id="@+id/comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:text="Oh cool! Now subscribe my cannel"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="100dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:textColor="#F6E9E4"
-        android:layout_marginLeft="20dp">
+        android:textSize="16sp"
+        android:textStyle="bold">
 
     </TextView>
+
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="0.57dp"
         android:layout_below="@id/comment"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#FFFFFF"
         android:layout_marginBottom="10dp"
-        >
-    </View>
+        android:background="#FFFFFF" />
 </RelativeLayout>

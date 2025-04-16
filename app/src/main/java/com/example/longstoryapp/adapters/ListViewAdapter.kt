@@ -1,23 +1,17 @@
 package com.example.longstoryapp.adapters
 
+import com.example.longstoryapp.R
 import android.content.Context
-import android.icu.text.Transliterator
-import android.icu.text.Transliterator.Position
-import android.util.Log.v
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.viewmodel.savedstate.R
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.longstoryapp.model.StoryClass
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class ListViewAdapter(
-    private val mcontext: Context,
+    private val mContext: Context,
     private val storyClassArrayList: ArrayList<StoryClass>,
 ) : BaseAdapter() {
     override fun getCount(): Int {
@@ -40,15 +34,15 @@ class ListViewAdapter(
         var convertView = convertView
         val viewHolder: ViewHolder
         if (convertView == null) {
-            val layoutInflater = LayoutInflater.from(mcontext)
-            convertView = layoutInflater.inflate(R.layout.list_item)
+            val layoutInflater = LayoutInflater.from(mContext)
+            convertView = layoutInflater.inflate(R.layout.list_item, parent, false)
             viewHolder = ViewHolder()
             viewHolder.time = convertView!!.findViewById<View>(R.id.time) as TextView
             viewHolder.title = convertView!!.findViewById<View>(R.id.title) as TextView
             viewHolder.comment = convertView!!.findViewById<View>(R.id.comment) as TextView
             viewHolder.profile = convertView!!.findViewById<View>(R.id.profile) as ImageView
             convertView.tag = viewHolder
-        }else{
+        } else {
             viewHolder = convertView.tag as ListViewAdapter.ViewHolder
         }
         val storyClass = getItem(potion) as StoryClass
@@ -60,11 +54,12 @@ class ListViewAdapter(
     }
 
     private inner class ViewHolder {
-        internal val profile: ImageView? = null
-        internal val title: TextView? = null
-        internal val time: TextView? = null
-        internal val comment: TextView? = null
+        lateinit var profile: ImageView
+        lateinit var title: TextView
+        lateinit var time: TextView
+        lateinit var comment: TextView
     }
+
 
 }
 
